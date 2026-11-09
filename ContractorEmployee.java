@@ -1,0 +1,23 @@
+import java.time.LocalDate;
+
+public class ContractorEmployee extends Employee {
+    private int hourlyRate;
+    private int hoursWorked;
+
+    public ContractorEmployee(String id, String name, LocalDate joinDate,
+                              int hourlyRate, int hoursWorked) {
+        super(id, name, hourlyRate * hoursWorked, joinDate);
+        this.hourlyRate = hourlyRate;
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public double calculateNetSalary() {
+        return (double) hourlyRate * hoursWorked - calculateTax();
+    }
+
+    @Override
+    public double calculateBonus(double performanceScore) {
+        return baseSalary * (performanceScore / 100.0) * 0.05;
+    }
+}

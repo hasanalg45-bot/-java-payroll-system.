@@ -11,7 +11,7 @@ public class PayrollSystem {
         employees.add(new ContractorEmployee("C101", "Yahya", LocalDate.of(2024, 3, 1), 30, 100));
         employees.add(new ContractorEmployee("C102", "Moataz", LocalDate.of(2025, 8, 15), 45, 90));
 
-        // الترتيب باستخدام compareTo
+  
         Collections.sort(employees);
 
         double performanceScore = 90;
